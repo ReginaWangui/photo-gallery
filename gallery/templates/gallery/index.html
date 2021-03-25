@@ -1,0 +1,246 @@
+{%extends "gallery/base.html"%}
+
+{% load cloudinary %}
+{%block content%}
+
+
+<section class="gallery-block compact-gallery"  style="background-color: white !important;">
+    <div class="container">
+        <div class="row no-gutters">
+            {%for photo in photos%}
+            <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                    <img class="img-fluid image" src="https://i.dlpng.com/static/png/6943763_preview.png" style="height: 300px !important; margin-bottom: 10px; margin-bottom: 10px; margin-top: 10px;" >
+                    <span class="description">
+                        <span class="description-heading">{{photo.name}}</span>
+                        <span class="description-body">{{photo.description}}</span>
+                        <div style="display: flex;">
+                            <p class="description-body"><span class="badge">
+                                <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                            </span></p>
+                            <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                            <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                        </div>
+                        <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                    </span>
+                </a>
+            </div>
+            <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                    <img class="img-fluid image" src="https://c0.klipartz.com/pngpicture/1008/296/gratis-png-tinypic-pelo-negro-imvu-avatar-imvu-avatar.png" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+                    
+
+                    <span class="description">
+                        <span class="description-heading">{{photo.name}}</span>
+                        <span class="description-body">{{photo.description}}</span>
+                        <div style="display: flex;">
+                            <p class="description-body"><span class="badge">
+                                <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                            </span></p>
+                            <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                            <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                        </div>
+                        <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                    </span>
+                </a>
+            </div>
+          
+            <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                    <img class="img-fluid image" src="https://i.pinimg.com/originals/7d/00/28/7d002857f0d3efb138220f37f6b07002.png" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+                    
+                    <span class="description">
+                        <span class="description-heading">{{photo.name}}</span>
+                        <span class="description-body">{{photo.description}}</span>
+                        <div style="display: flex;">
+                            <p class="description-body"><span class="badge">
+                                <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                            </span></p>
+                            <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                            <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                        </div>
+                        <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                    </span>
+                </a>
+            </div>
+            <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                    <img class="img-fluid image" src="https://i.pinimg.com/736x/4b/24/b9/4b24b994811c1a732bdc70ef9102a88c.jpg" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+
+                    <span class="description">
+                        <span class="description-heading">{{photo.name}}</span>
+                        <span class="description-body">{{photo.description}}</span>
+                        <div style="display: flex;">
+                            <p class="description-body"><span class="badge">
+                                <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                            </span></p>
+                            <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                            <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                        </div>
+                        <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                    </span>
+                </a>
+            </div>
+        </div>
+            {%endfor%}
+
+            <div class="row no-gutters">
+                {%for photo in photos%}
+                <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                    <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                        <img class="img-fluid image" src="https://p1.hiclipart.com/preview/855/373/260/woman-hair-drawing-wig-lace-wig-afro-dreadlocks-wigs-for-black-women-painting-png-clipart.jpg" style="height: 300px !important; margin-bottom: 10px; margin-bottom: 10px; margin-top: 10px;" >
+                        <span class="description">
+                            <span class="description-heading">{{photo.name}}</span>
+                            <span class="description-body">{{photo.description}}</span>
+                            <div style="display: flex;">
+                                <p class="description-body"><span class="badge">
+                                    <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                                </span></p>
+                                <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                                <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                            </div>
+                            <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                    <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                        <img class="img-fluid image" src="https://i.pinimg.com/originals/cc/a3/50/cca350fddf554a8b54e4eae23ebf2fab.jpg" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+                        
+    
+                        <span class="description">
+                            <span class="description-heading">{{photo.name}}</span>
+                            <span class="description-body">{{photo.description}}</span>
+                            <div style="display: flex;">
+                                <p class="description-body"><span class="badge">
+                                    <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                                </span></p>
+                                <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                                <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                            </div>
+                            <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                        </span>
+                    </a>
+                </div>
+              
+                <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                    <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                        <img class="img-fluid image" src="https://i.pinimg.com/originals/14/c9/bc/14c9bc89dc3739816405cc79e3344543.jpg" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+                        
+                        <span class="description">
+                            <span class="description-heading">{{photo.name}}</span>
+                            <span class="description-body">{{photo.description}}</span>
+                            <div style="display: flex;">
+                                <p class="description-body"><span class="badge">
+                                    <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                                </span></p>
+                                <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                                <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                            </div>
+                            <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                        </span>
+                    </a>
+                </div>
+                <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                    <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                        <img class="img-fluid image" src="https://i.pinimg.com/736x/19/cf/0c/19cf0c7b150677e0185b0333592a43d5.jpg" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+    
+                        <span class="description">
+                            <span class="description-heading">{{photo.name}}</span>
+                            <span class="description-body">{{photo.description}}</span>
+                            <div style="display: flex;">
+                                <p class="description-body"><span class="badge">
+                                    <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                                </span></p>
+                                <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                                <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                            </div>
+                            <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                        </span>
+                    </a>
+                </div>
+            </div>
+                {%endfor%}
+                <div class="row no-gutters">
+                    {%for photo in photos%}
+                    <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                        <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                            <img class="img-fluid image" src="https://i.pinimg.com/originals/c3/e5/fe/c3e5fe33a73e804516083a16b135c5dc.jpg" style="height: 300px !important; margin-bottom: 10px; margin-bottom: 10px; margin-top: 10px;" >
+                            <span class="description">
+                                <span class="description-heading">{{photo.name}}</span>
+                                <span class="description-body">{{photo.description}}</span>
+                                <div style="display: flex;">
+                                    <p class="description-body"><span class="badge">
+                                        <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                                    </span></p>
+                                    <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                                    <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                                </div>
+                                <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                        <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                            <img class="img-fluid image" src="https://i.pinimg.com/originals/c3/e5/fe/c3e5fe33a73e804516083a16b135c5dc.jpg" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+                            
+        
+                            <span class="description">
+                                <span class="description-heading">{{photo.name}}</span>
+                                <span class="description-body">{{photo.description}}</span>
+                                <div style="display: flex;">
+                                    <p class="description-body"><span class="badge">
+                                        <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                                    </span></p>
+                                    <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                                    <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                                </div>
+                                <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                            </span>
+                        </a>
+                    </div>
+                  
+                    <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                        <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                            <img class="img-fluid image" src="https://i.pinimg.com/474x/73/4f/a7/734fa7c9208ec53508409f7c56066637.jpg" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+                            
+                            <span class="description">
+                                <span class="description-heading">{{photo.name}}</span>
+                                <span class="description-body">{{photo.description}}</span>
+                                <div style="display: flex;">
+                                    <p class="description-body"><span class="badge">
+                                        <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                                    </span></p>
+                                    <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                                    <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                                </div>
+                                <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-md-12 col-lg-3 item zoom-on-hover">
+                        <a class="lightbox"  data-caption="{{photo.name}}: {{photo.description}}">
+                            <img class="img-fluid image" src="https://i.pinimg.com/originals/b9/dd/c6/b9ddc6fa9fa31470443055a3d2e7932e.jpg" style="margin-left: 10px; margin-bottom: 10px; height: 300px !important;">
+        
+                            <span class="description">
+                                <span class="description-heading">{{photo.name}}</span>
+                                <span class="description-body">{{photo.description}}</span>
+                                <div style="display: flex;">
+                                    <p class="description-body"><span class="badge">
+                                        <i class="fas fa-map-marker-alt"></i> {{photo.location.city}}, {{photo.location.country}}
+                                    </span></p>
+                                    <span id="photo{{photo.id}}" hidden>{{photo.image.cdn_url}}</span>
+                                    <button onclick="copyToClipboard('photo{{photo.id}}')" class="btn no-border text-white"><i class="far fa-copy"></i></button>
+                                </div>
+                                <small style="font-size: 12px; float:right" class="ml-45"><i class="far fa-clock"></i> {{photo.post_date | timesince}} ago</small>  
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                </div>
+                    {%endfor%}
+        
+    
+</section>
+{%endblock%}
